@@ -1,4 +1,4 @@
-const cards = ["A", "B", "C", "A", "B", "C"]
+const cards = ["A", "B", "C", "A", "B", "C", "A", "B", "C", "A", "B", "C"]
 
 function createCard(idx){
     const cardEl=document.createElement("div")

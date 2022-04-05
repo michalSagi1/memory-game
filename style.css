@@ -1,0 +1,30 @@
+#board{
+        display: grid;
+        grid-gap: 5 px ;
+       grid-template-columns: 1fr 1fr 1fr 1fr;
+        /* padding:20px;; */
+}
+
+.cards{
+    border: 2px solid rgb(77, 9, 9);
+    border-radius: 10px;
+    margin:20px;
+    /* padding: 5px; */
+    /* width: 100px; */
+    height: 200px;
+    background-color: rgb(227, 178, 199);
+    text-align:center;
+    font-size: 100px;
+    line-height: 2;
+    font-family: 'Josefin Sans', sans-serif;
+    color: floralwhite;
+    
+    
+    
+}
+#h{    font-family: 'Josefin Sans', sans-serif;
+    font-size: 80px;
+    text-align:center;
+    color: rgb(77, 9, 9)
+
+}
