@@ -1,10 +1,29 @@
 const cards = ["A", "B", "C", "A", "B", "C"]
-const board = document.getElementById("board")
 
+function createCard(idx){
+    const cardEl=document.createElement("div")
+    cardEl.innerHTML=cards[idx];
+    cardEl.id=idx
+    cardEl.className="cards"
 
- for (i of cards){
-    const element = document.createElement("div")
-    element.innerHTML = i
-    board.appendChild(element)
+    return cardEl
+}
 
+function shuffle (arr){
+    arr.sort(() => Math.random() - 0.5);
  }
+
+shuffle(cards);
+
+
+
+const board = document.getElementById("board")
+ for (i in cards){
+    const element = createCard(i)
+    board.appendChild(element)
+ }
+
+
+
+
+ 
