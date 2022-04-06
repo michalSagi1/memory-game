@@ -3,6 +3,7 @@
         grid-gap: 5 px ;
        grid-template-columns: 1fr 1fr 1fr 1fr;
         /* padding:20px;; */
+        
 }
 
 .cards{
@@ -17,11 +18,16 @@
     font-size: 100px;
     line-height: 2;
     font-family: 'Josefin Sans', sans-serif;
-    color: floralwhite;
-    
-    
-    
+     color: floralwhite;
+     cursor: pointer;
+  
 }
+
+.cards:hover {
+    background-color: yellow;
+    font-weight: bold;
+      }
+
 #h{    font-family: 'Josefin Sans', sans-serif;
     font-size: 80px;
     text-align:center;
