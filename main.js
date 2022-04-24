@@ -1,17 +1,48 @@
-const cards = ["A", "B", "C", "A", "B", "C", "A", "B", "C", "A", "B", "C"]
+const cards = ["❤️", "🎷", "🌵", "🦄", "🥁", "🍄", "❤️", "🎷", "🌵", "🦄", "🥁", "🍄"]
+const cards1 = ["🤍", "🤍", "🤍", "🤍", "🤍", "🤍", "🤍", "🤍", "🤍", "🤍", "🤍", "🤍"]
+let openCard = []
+let cnt = 0
+function createCard(idx) {
+    const cardEl = document.createElement("div")
+    cardEl.id = idx
+    cardEl.innerHTML = cards1[idx];
+    cardEl.addEventListener(`click`, (e) => {
+        if (cnt < 2) {
+            cardEl.innerHTML = cards[idx];
+            openCard.push(cardEl.id)
+            cnt++
+        }
+        setTimeout(() => {
+            if (cnt == 2) {
+                if (cards[openCard[0]] == cards[openCard[1]]) {
+                    alert("true")
+                } else {
+                    alert("false");
 
-function createCard(idx){
-    const cardEl=document.createElement("div")
-    cardEl.innerHTML=cards[idx];
-    cardEl.id=idx 
-    cardEl.className="cards"
+                    document.getElementById(openCard[0]).innerHTML = cards1[idx];
+                    document.getElementById(openCard[1]).innerHTML = cards1[idx];
 
+
+                }
+            }
+        }, 200)
+
+
+    })
+
+
+
+    openCard = []
+    cardEl.className = "cards col-12 col-md-5 col-lg-2"
     return cardEl
+
 }
 
-function shuffle (arr){
+
+
+function shuffle(arr) {
     arr.sort(() => Math.random() - 0.5);
- }
+}
 
 shuffle(cards);
 
@@ -19,24 +50,11 @@ shuffle(cards);
 
 const board = document.getElementById("board")
 
- for (i in cards){
+for (i in cards) {
     const element = createCard(i)
     board.appendChild(element)
 
- }
-
- 
- 
-//      document.getElementById("0").onmouseover = function() {mouseOver()};
-//      document.getElementById("0").onmouseout = function() {mouseOut()};
-
-    
-//  function mouseOver() {
-//     document.getElementById("0").style.backgroundColor= "rgb(77, 9, 9)";
-//   } 
-//   function mouseOut() {
-//   document.getElementById("0").style.backgroundColor = "rgb(227, 178, 199)"
-// }
+}
 
 
 
@@ -47,4 +65,9 @@ const board = document.getElementById("board")
 
 
 
- 
+
+
+
+
+
+
