@@ -102,11 +102,11 @@ function createCard(idx) {
 
                         if (players[0].score > players[1].score) {
                             alert(
-                                `The winner is player1! score: ${players[0].score}`)
+                                `The winner is ${players[0].name}! score: ${players[0].score}`)
                         }
                         else if (players[0].score < players[1].score) {
                             alert(
-                                `The winner is player2! score: ${players[1].score}`)
+                                `The winner is ${players[1].name}! score: ${players[1].score}`)
                         }
                         else {
                             alert(
