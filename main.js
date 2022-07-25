@@ -67,15 +67,19 @@ const startGame = () => {
     player2.innerText = `name: ${players[1].name} | score: ${players[1].score}`
 
     numCards = document.getElementById("numCard").value
+    if (numCards == '') {
+        numCards = 20
+    }
     if ((numCards % 2 != 0) || (numCards > 20)) {
         numCards = prompt("The number of cards must be even, and maximum 20! \n Enter a new number...")
-        if ((numCards % 2 != 0) || (numCards > 20))
-            numCards = null
+        if ((numCards % 2 != 0) || (numCards > 20)) {
+            numCards = 20
+        }
     }
     console.log(numCards);
 
-    let cards = card.slice(0, numCards || 16)
-    let cards1 = card1.slice(0, numCards || 16)
+    let cards = card.slice(0, numCards)
+    let cards1 = card1.slice(0, numCards)
 
 
     let _open = 0
@@ -150,10 +154,10 @@ const startGame = () => {
 
 
 
-                        player1.innerText = `name: ${players[0].name} | score: ${players[0].score}`
-                        player2.innerText = `name: ${players[1].name} | score: ${players[1].score}`
+                        // player1.innerText = `name: ${players[0].name} | score: ${players[0].score}`
+                        // player2.innerText = `name: ${players[1].name} | score: ${players[1].score}`
 
-                        if ((_open == numCards / 2) || (_open == 8)) {
+                        if ((_open == numCards / 2)) {
 
                             if (players[0].score > players[1].score) {
                                 playWin()
@@ -170,8 +174,8 @@ const startGame = () => {
                                 //     `The winner is ${players[1].name}! score: ${players[1].score}`)
                             }
                             else {
-                                alert(
-                                    `Teko!!`)
+                                winner.innerText = `Teko!  ${players[1].name} - ${players[1].score}  //  ${players[0].name} - ${players[0].score} `
+                                winner.style.display = "flex"
                             }
 
                         }
