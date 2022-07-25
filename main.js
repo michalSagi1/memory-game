@@ -16,6 +16,9 @@ let player1 = document.getElementById("player1")
 let player2 = document.getElementById("player2")
 player1.style.display = "none"
 player2.style.display = "none"
+let winner = document.getElementById("winner")
+winner.style.display = "none"
+
 
 function creatPleyer(name, score) {
     return {
@@ -64,14 +67,15 @@ const startGame = () => {
     player2.innerText = `name: ${players[1].name} | score: ${players[1].score}`
 
     numCards = document.getElementById("numCard").value
-    if (numCards % 2 != 0) {
-        numCards = prompt("nust zugi! number cards?... max 20")
-
+    if ((numCards % 2 != 0) || (numCards > 20)) {
+        numCards = prompt("The number of cards must be even, and maximum 20! \n Enter a new number...")
+        if ((numCards % 2 != 0) || (numCards > 20))
+            numCards = null
     }
     console.log(numCards);
+
     let cards = card.slice(0, numCards || 16)
     let cards1 = card1.slice(0, numCards || 16)
-
 
 
     let _open = 0
@@ -153,13 +157,17 @@ const startGame = () => {
 
                             if (players[0].score > players[1].score) {
                                 playWin()
-                                alert(
-                                    `The winner is ${players[0].name}! score: ${players[0].score}`)
+                                winner.innerText = `The winner is ${players[0].name}! score: ${players[0].score}`
+                                winner.style.display = "flex"
+                                //     alert(
+                                //         `The winner is ${players[0].name}! score: ${players[0].score}`)
                             }
                             else if (players[0].score < players[1].score) {
                                 playWin()
-                                alert(
-                                    `The winner is ${players[1].name}! score: ${players[1].score}`)
+                                winner.innerText = `The winner is ${players[1].name}! score: ${players[1].score}`
+                                winner.style.display = "flex"
+                                // alert(
+                                //     `The winner is ${players[1].name}! score: ${players[1].score}`)
                             }
                             else {
                                 alert(

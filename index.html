@@ -23,11 +23,13 @@
     <button id="newGame">new game</button>
     <h1 id="h">memory game</h1>
     <div class="players animate__animated  animate__slideInDown">
-      <input type="text" name="name1" id="name1" placeholder="❤️  player 1...  "/>
+      <input type="text" name="name1" id="name1" placeholder="❤️  player 1 "/>
       </br>
-      <input type="text" name="name2" id="name2" placeholder="❤️   player 2...   " />
+      <input type="text" name="name2" id="name2" placeholder="❤️   player 2   " />
       </br>
-      <input type="text" name="numCard" id="numCard" placeholder="❤️  number cards?... max 20...   " oninput=value />
+      <label for="numCard">Enter Number of cards. </br> Even number, maximum 20: </label>  </br>
+
+      <input type="text" name="numCard" id="numCard" placeholder="🃏" />
     </br>
       <button id="submit"  type="button">start</button>
     </div>
@@ -37,7 +39,8 @@
       <div class="row justify-content-between g-5">
         <div class="col-4 col-sm-4 col-md-4 py-4" id="player1"></div>
         <div class="col-4 col-sm-4 col-md-4 py-4" id="player2"></div>
-        <div id="winner"></div>
+
+        <div class="row justify-content-center" id="winner">winner</div>
       </div>
     </div>
 
